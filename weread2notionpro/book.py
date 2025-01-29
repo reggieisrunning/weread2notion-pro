@@ -179,6 +179,7 @@ def main():
                 value.get("status") != "已读"
                 or (value.get("status") == "已读" and value.get("myRating"))
             )
+            and (value.get("mySyncStatus") != "Yes")
         ):
             not_need_sync.append(key)
     notebooks = weread_api.get_notebooklist()
